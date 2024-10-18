@@ -24,9 +24,10 @@ body {
 a{
   color: #006b3a;
 }
-main a{
-  outline: none;
-}
+/* 
+ main a {
+   outline: none;  /* Commented out outline to keep focus indicators visible on links for keyboard accessibility.
+    }   */
 h2 {
   margin-top: 0;
 }
@@ -206,7 +207,7 @@ article p {
       <nav class="menu">
         <a href="#">Home</a>
         <a href="#">Politics</a>
-        <a href="#" tabindex="-1">Business</a>
+        <a href="#">Business</a>   <!-- Remove tabindex="-1" for Business link to make it focusable -->
         <a href="#">Entertainment</a>
         <a href="#">Sports</a>
         <a href="#" class="btn-search pull-right"><img src="https://raw.githubusercontent.com/udacity/ud891/2de2a0688c68809a3b453db3a24b1a59e8401459/lesson2-focus/02-dom-order/images/search.svg" alt="Search" />Search</a> 
@@ -214,13 +215,7 @@ article p {
       </nav>
     </div>
   </header>
-  <div class="newsletter">
-    <div class="container">
-      <h3>Like the Funion? Consider joining our newsletter!</h3>
-      <input type="text">
-      <button type="button" onfocus="getFocus()">Sign up</button></div>
-      
-    </div>
+  
   </div>
   <main class="container">
     <h2 class="offscreen">Top story</h2>
@@ -239,7 +234,7 @@ article p {
     <div class="side-by-side">
       <div class="column">
         <div class="tier-header">
-          <h2 tabindex="0">In the news</h2>
+          <h2>In the news</h2> <!--removed table index ="0" as it was getting focused and headings are not focusable-->
         </div>
         <article>
           <h3 class="headline">Bee wonders if maybe everyone else is a drone and he's the only one who has it "figured out."</h3>
@@ -290,6 +285,16 @@ article p {
   <footer>
   </footer>
   -->
+   <!--Add the footer-->
+   <footer>
+    <div class="newsletter">
+      <div class="container">
+        <h3>Like the Funion? Consider joining our newsletter!</h3>
+        <input type="text">
+        <button type="button" onclick="getFocus()">Sign up</button></div> <!--changing onfocus to onclick -->
+      </div>
+    </div>
+  </footer>
   
   <script>
     function getFocus() {
